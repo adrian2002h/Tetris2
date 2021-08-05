@@ -72,6 +72,8 @@ function draw() {
 	if (ghostMode) ghostPiece.show();
 	fallingPiece.show();
 	
+	scoreboard();
+	handleTime();
 }
 
 
@@ -80,7 +82,7 @@ function spawnNewPiece() {
 		playfield.addToGrid(fallingPiece);
 	}
 	
-	const pieces = ['O', 'J', 'L', 'S', 'Z', 'T', 'I', 'H']
+	const pieces = ['O', 'J', 'L', 'S', 'Z', 'T', 'I', 'h']
 	const choice = random(pieces);
 	fallingPiece = new Piece(choice, playfield);
 	

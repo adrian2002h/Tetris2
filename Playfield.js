@@ -5,14 +5,19 @@
 addToGrid, isValid, resetGrid, piece, show, rect, noStroke, fill
 
 */
+let time,
+highScore =0,
+score =0 ,
+gameIsOver, 
+counter;
 
 class Playfield {
-
+  
 	constructor(w, h) {
 		// colors
 		this.foreground = color("lightgray");
 		this.background = color("black");
-		
+
 		// dimensions and grid
 		this.cols = w;
 		this.rows = h;
@@ -25,10 +30,10 @@ class Playfield {
 
 		// whether or not gridlines are seen
 		this.gridlines = true;
+
 	}
 
 	addToGrid(piece) {
-		
 		for (let row = 0; row < piece.size; row++) {
 			for (let col = 0; col < piece.size; col++) {
 				
@@ -39,15 +44,11 @@ class Playfield {
 					this.grid[gridRow][gridCol] = 
 						piece.cells[row][col];
 				}
-				
 			}
-		}
-		
+		}	
 	}
 	
-	
 	clearLines() {
-		
 		for (let row = this.rows-1; row >= 0; row--) {
 
 			// if this row is full
@@ -57,13 +58,10 @@ class Playfield {
 				// and add an empty row to the top
 				this.grid.unshift(new Array(this.cols).fill(this.foreground));
 			}
-			
 		}
-		
 	}
 	
 	isValid(piece) {
-		
 		for (let row = 0; row < piece.size; row++) {
 			for (let col = 0; col < piece.size; col++) {
 				
@@ -77,12 +75,9 @@ class Playfield {
 							this.grid[gridRow][gridCol] != this.foreground)
 						return false;
 				}
-				
 			}
 		}
-
 		return true;
-		
 	}
 	
 	
@@ -90,15 +85,19 @@ class Playfield {
 		for (let i = 0; i < this.rows; i++) {
 			this.grid[i] = new Array(this.cols).fill(this.foreground);
 		}
+    time = 0;
+    gameIsOver = false;
+    score = 0;
+    highScore = 0;
 	}
-	
+
 	
 	show() {
 		//===========================
 		// Draw the rectangle behind all the cells
 		// for the border and gridlines
 		//===========================
-	
+    
 		let bs = this.borderSize
 		let cs = this.cellSize
 
@@ -112,7 +111,6 @@ class Playfield {
 		// top and right borders stay in canvas
 		let offset = floor(bs / 2)
 		rect(offset, offset, cs * this.cols + bs - 1, cs * this.rows + bs - 1)
-		
 		
 		//===========================
 		// End of big rectangle 
@@ -145,6 +143,33 @@ class Playfield {
 
 		
 	} // end of show()
-
-
 }
+
+function scoreboard(){
+		//textFont('Courier New');
+		fill(100, 0, 100); // some color
+		handleTime();
+		if (!gameIsOver) {
+			// Add text with the time remaining:
+			text(`High Score: ${highScore}`, 10, 20);
+			text(`Current score: ${score}`, 10, 40);
+			text(`Time Spent: ${counter}`, 10, 60);
+		}else {
+			fill(0, 0, 100); // RED
+			textSize(50);
+			textAlign(CENTER);
+			text(`GAME OVER`, 200, 200);
+			textSize(30);
+			text(`SCORE: ${score}`,250, 300);
+			if(score == highScore) {
+			 text(`NEW HIGH SCORE!!`, 200, 260);
+			 }
+			text(`HIGH SCORE: ${highScore}`, 200, 290);
+		}
+		}
+function handleTime(){
+		// 1 counter = 1 second
+		if (counter > 0) {
+			counter++;
+		}
+		}
