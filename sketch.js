@@ -80,7 +80,7 @@ function spawnNewPiece() {
 		playfield.addToGrid(fallingPiece);
 	}
 	
-	const pieces = ['O', 'J', 'L', 'S', 'Z', 'T', 'I']
+	const pieces = ['O', 'J', 'L', 'S', 'Z', 'T', 'I', 'H']
 	const choice = random(pieces);
 	fallingPiece = new Piece(choice, playfield);
 	

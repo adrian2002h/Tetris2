@@ -155,8 +155,8 @@ let types = {
 
 
 	J: [
-		['#f43',  null ,  null ],
-		['#f43', '#f43', '#f43'],
+		['#008B8B',  null ,  null ],
+		['#008B8B', '#008B8B', '#008B8B'],
 		[ null ,  null ,  null ]
 	],
 
@@ -169,31 +169,34 @@ let types = {
 
 
 	S: [
-		[ null , '#f43', '#f43'],
-		['#f43', '#f43',  null ],
+		[ null , '#EEE8AA', '#EEE8AA'],
+		['#EEE8AA', '#EEE8AA',  null ],
 		[ null ,  null ,  null ]
 	],
 
 
 	Z: [
-		['#f43', '#f43',  null ],
-		[ null , '#f43', '#f43'],
+		['#FFE4B5', '#FFE4B5',  null ],
+		[ null , '#FFE4B5', '#FFE4B5'],
 		[ null ,  null ,  null ]
 	],
 
 
 	T: [
-		[ null , '#f43',  null ],
-		['#f43', '#f43', '#f43'],
+		[ null , '#0000FF',  null ],
+		['#0000FF', '#0000FF', '#0000FF'],
 		[ null ,  null ,  null ]
 	],
 
 
 	I: [
 		[ null ,  null ,  null ,  null ],
-		['#f43', '#f43', '#f43', '#f43'],
+		['#00FF00', '#00FF00', '#00FF00', '#00FF00'],
 		[ null ,  null ,  null ,  null ],
 		[ null ,  null ,  null ,  null ],
+	], 
+  H: [
+		['#f43']
 	]
 
 }
