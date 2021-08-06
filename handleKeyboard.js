@@ -4,7 +4,6 @@
  *    noStroke, random, strokeWeight, text, textSize, width
  */
 
-console.log('keyboard')
 document.addEventListener('keydown', event => {
     if ([32, 37, 38, 39, 40].includes(event.keyCode)) {
     	event.preventDefault();

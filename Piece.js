@@ -148,6 +148,9 @@ class Piece {
 
 let types = {
 
+	h: [
+		['#f43']
+	],
 	O: [
 		['cssilogo.jpg', 'cssilogo.jpg'],
 		['cssilogo.jpg', 'cssilogo.jpg']
@@ -194,9 +197,6 @@ let types = {
 		['#00FF00', '#00FF00', '#00FF00', '#00FF00'],
 		[ null ,  null ,  null ,  null ],
 		[ null ,  null ,  null ,  null ],
-	], 
-  H: [
-		['#f43']
 	]
 
 }

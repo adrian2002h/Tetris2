@@ -9,7 +9,7 @@ let time,
 highScore =0,
 score =0 ,
 gameIsOver, 
-counter;
+counter = 0;
 
 class Playfield {
   
@@ -57,6 +57,7 @@ class Playfield {
 				this.grid.splice(row, 1)
 				// and add an empty row to the top
 				this.grid.unshift(new Array(this.cols).fill(this.foreground));
+				score += 100;
 			}
 		}
 	}
@@ -146,7 +147,7 @@ class Playfield {
 }
 
 function scoreboard(){
-		//textFont('Courier New');
+		textFont('roboto');
 		fill(100, 0, 100); // some color
 		handleTime();
 		if (!gameIsOver) {
@@ -167,9 +168,10 @@ function scoreboard(){
 			text(`HIGH SCORE: ${highScore}`, 200, 290);
 		}
 		}
+
 function handleTime(){
 		// 1 counter = 1 second
-		if (counter > 0) {
-			counter++;
+		if (counter >= 0) {
+			counter = round(performance.now() / 1000);
 		}
 		}

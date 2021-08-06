@@ -18,8 +18,8 @@ function setup() {
 	createCanvas(totalWidth, totalHeight);
 
 	spawnNewPiece();
- 
 }
+	
 
 
 let prev = 0;
@@ -72,8 +72,12 @@ function draw() {
 	if (ghostMode) ghostPiece.show();
 	fallingPiece.show();
 	
-	scoreboard();
 	handleTime();
+	scoreboard();
+
+
+
+
 }
 
 
